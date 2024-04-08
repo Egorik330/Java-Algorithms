@@ -1,24 +1,24 @@
 package structs;
 import java.util.NoSuchElementException;
 
-public class Queue<Item> {
+public class Queue<T> {
     private Node last;
-    private int N;
+    private int n;
 
     private class Node {
-        Item item;
+        T item;
         Node next;
     }
 
     public boolean isEmpty() {
-        return N == 0;
+        return n == 0;
     }
 
     public int size() {
-        return N;
+        return n;
     }
 
-    public void enqueue(Item value) {
+    public void enqueue(T value) {
         Node oldLast = last;
         last = new Node();
         last.item = value;
@@ -28,21 +28,21 @@ public class Queue<Item> {
             last.next = oldLast.next;
             oldLast.next = last;
         }
-        N++;
+        n++;
     }
 
-    public Item dequeue() {
+    public T dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException("Очередь пуста");
         }
-        Item it = last.item;
+        T it = last.item;
         if (last.next == last) {
             last = null;
         } else {
             it = last.next.item;
             last.next = last.next.next;
         }
-        N--;
+        n--;
         return it;
     }
 }

@@ -1,11 +1,9 @@
 package structs;
 import java.util.NoSuchElementException;
 
-public class LinkedStackQueue<Item> {
+public class LinkedStackQueue<T> {
     private Node front; // Начало очереди
     private Node rear; // Конец очереди
-
-    Item N;
 
     public LinkedStackQueue() {
         this.front = null;
@@ -13,16 +11,16 @@ public class LinkedStackQueue<Item> {
     }
 
     private class Node {
-        Item data;
+        T data;
         Node next;
-        public Node(Item data) {
+        public Node(T data) {
             this.data = data;
             this.next = null;
         }
     }
 
    
-    public void push(Item value) {
+    public void push(T value) {
         Node newNode = new Node(value);
         if (isEmpty()) {
             front = newNode;
@@ -34,26 +32,26 @@ public class LinkedStackQueue<Item> {
     }
 
     
-    public Item pop() {
+    public T pop() {
         if (isEmpty()) {
             throw new NoSuchElementException("стеко-очередь пуста");
         }
-        Item poppedValue = rear.data;
+        T poppedValue = rear.data;
         rear = null;
         return poppedValue;
     }
 
    
-    public void enqueue(Item value) {
+    public void enqueue(T value) {
         push(value); 
     }
 
     // Извлечение элемента из очереди
-    public Item dequeue() {
+    public T dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException("стеко-очередь пуста");
         }
-        Item dequeuedValue = front.data;
+        T dequeuedValue = front.data;
         front = front.next;
         return dequeuedValue;
     }

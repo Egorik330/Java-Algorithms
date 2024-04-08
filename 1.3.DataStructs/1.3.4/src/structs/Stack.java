@@ -1,52 +1,36 @@
 package structs;
 import java.util.*;
 
-public class Stack<Item> implements Iterable<Item> {
+public class Stack<T> {
     private Node first;
-    private int N;
+    private int n;
     private class Node {
         
-        Item item;
+        T value;
         Node next;
     }
     public boolean isEmpty() {
         return first == null; 
     }
     public int size() {
-        return N;
+        return n;
     }
-    public void push(Item item) {
+    public void push(T T) {
         
         Node oldfirst = first;
         first = new Node();
-        first.item = item;
+        first.value = T;
         first.next = oldfirst;
-        N++;
+        n++;
     }
-    public Item pop() {
+    public T pop() {
        
         if (isEmpty()) {
             throw new NoSuchElementException("Стек пуст");
         }
-        Item item = first.item;
+        T val = first.value;
         first = first.next;
-        N--;
-        return item;
-    }
-    public Iterator<Item> iterator() {
-        return new StackListIterator();
-    }
-    private class StackListIterator implements Iterator<Item> {
-        private Node curr = first;
-        public boolean hasNext() {
-            return curr != null;
-        }
-        public Item next() {
-            if (!hasNext())
-                throw new NoSuchElementException();
-            Item item = curr.item;
-            curr = curr.next;
-            return item;
-        }
+        n--;
+        return val;
     }
 }
