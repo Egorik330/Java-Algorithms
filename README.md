@@ -4,15 +4,7 @@ SonarCloud: https://sonarcloud.io/project/overview?id=Egorik330_Java-Algorithms
 
 Tasks:
 
-[1.3] Контейнеры, очереди, стеки:
-
-Tasks\1.3\4 (Plan: 0.33 | Fact: 0.5)
-
-Tasks\1.3\29 (Plan: 0.5 | Fact: 0.5)
-
-Tasks\1.3\37 (Plan: 0.75 | Fact: 0.75)
-
-Tasks\1.3\32 (Plan: 0.5 | Fact: 0.75)
+[1.3] Контейнеры, очереди, стеки: https://github.com/Egorik330/Java-Algorithms/tree/bce6d16a8c98021b10d922c0ffc45c015d287d2d/1.3.DataStructs
 
 [2.5] Применение сортировок: 1. 2. 3. 4.
 
