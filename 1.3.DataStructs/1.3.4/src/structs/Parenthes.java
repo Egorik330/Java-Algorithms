@@ -8,19 +8,17 @@ public class Parenthes
     {
         for (int i =0; i<s.length(); i++)
         {
-            char c = s.charAt(i);
+            char symb= s.charAt(i);
             if (c == '(' || c == '[' || c == '{') {
-                stack.push(c);
-            } else if (c == ')' && (stack.isEmpty() || stack.pop() != '(')){
+                stack.push(symb);
+            } else if (symb == ')' && (stack.isEmpty() || stack.pop() != '(')){
                     return false;
-            } else if (c == ']' &&  (stack.isEmpty() || stack.pop() != '[')) {
+            } else if (symb== ']' &&  (stack.isEmpty() || stack.pop() != '[')) {
                     return false;
-            } else if (c == '}' &&  (stack.isEmpty() || stack.pop() != '{')) {
+            } else if (symb == '}' &&  (stack.isEmpty() || stack.pop() != '{')) {
                     return false;
-        }
-        
+            }
         }
         return stack.size()==0;
     }   
-
 }
