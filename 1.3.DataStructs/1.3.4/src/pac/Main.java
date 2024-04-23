@@ -1,27 +1,34 @@
 package pac;
 import java.util.logging.Logger;
 import java.lang.IllegalStateException;
+import java.util.Scanner;
 
 import structs.Parenthes;
 import structs.Stack;
 
-public class Main
-{
+public class Main {
 
     private Main() {
         throw new IllegalStateException("Utility class");
-      }
+    }
 
-    private static final Logger logger = Logger.getLogger(Main.class.getName());
-    public static void main() {
+    private static final Logger LOGGER = Logger.getLogger(Main.class.getName());
+    
+    public static void main(String[] args) {
         Stack<Character> stack = new Stack<>();
-        if (logger.isLoggable(java.util.logging.Level.INFO)) {
-            String test1 = "{([])}";
-            boolean ans1 = Parenthes.isCorrect(test1, stack);
-            logger.info("Answer for " + test1+" :"+ans1);
-            String test2 = "[(])"; 
-            boolean ans2 = Parenthes.isCorrect(test2, stack);
-            logger.info("Answer for " + test2+" :" + ans2);
+        Scanner scanner = new Scanner(System.in);
+
+        if (LOGGER.isLoggable(java.util.logging.Level.INFO)) {
+            LOGGER.info("Введите строку из скобок для проверки:");
+            String test = scanner.nextLine();
+            
+            if (!test.matches("[()\\[\\]{}]*")) {
+                LOGGER.info("Введенная строка должна состоять только из различных видов скобок.");
+            } else {
+                boolean ans = Parenthes.isCorrect(test, stack);
+                LOGGER.info("Answer for " + test + " :" + ans);
+            }
         }
- }
+        scanner.close();
+    }  
 }

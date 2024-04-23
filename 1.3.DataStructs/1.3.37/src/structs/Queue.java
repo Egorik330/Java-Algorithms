@@ -1,48 +1,77 @@
 package structs;
 import java.util.NoSuchElementException;
+import java.util.Iterator;
 
-public class Queue<T> {
+public class Queue<Item> implements Iterable<Item> {
     private Node last;
-    private int n;
+    private int capacity;
 
     private class Node {
-        T item;
+        Item item;
         Node next;
     }
 
     public boolean isEmpty() {
-        return n == 0;
+        return capacity == 0;
     }
 
     public int size() {
-        return n;
+        return capacity;
     }
 
-    public void enqueue(T value) {
+    public void enqueue(Item value) {
         Node oldLast = last;
         last = new Node();
         last.item = value;
+
         if (isEmpty()) {
             last.next = last;
         } else {
             last.next = oldLast.next;
             oldLast.next = last;
         }
-        n++;
+
+        capacity++;
     }
 
-    public T dequeue() {
+    public Item dequeue() {
         if (isEmpty()) {
             throw new NoSuchElementException("Очередь пуста");
         }
-        T it = last.item;
+
+        Item dequeuedValue = last.item;
+
         if (last.next == last) {
             last = null;
         } else {
-            it = last.next.item;
+            dequeuedValue = last.next.item;
             last.next = last.next.next;
         }
-        n--;
-        return it;
+
+        capacity--;
+        return dequeuedValue;
+    }
+
+    public Iterator<Item> iterator() {
+        return new QueueIterator();
+    }
+
+    private class QueueIterator implements Iterator<Item> {
+        private Node current = last.next;
+        private int count = 0;
+
+        public boolean hasNext() {
+            return count < capacity;
+        }
+
+        public Item next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            Item value = current.item;
+            current = current.next;
+            count++;
+            return value;
+        }
     }
 }
