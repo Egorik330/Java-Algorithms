@@ -6,7 +6,7 @@ Tasks:
 
 [1.3] Контейнеры, очереди, стеки: https://github.com/Egorik330/Java-Algorithms/tree/bce6d16a8c98021b10d922c0ffc45c015d287d2d/1.3.DataStructs
 
-[2.5] Применение сортировок: 1. 2. 3. 4.
+[2.5] Применение сортировок: https://github.com/Egorik330/Java-Algorithms/tree/Egorik330-new-stuff/2.5%20Sorting
 
 [3.2] Деревья бинарного поиска: 1. 2 3. 4.
 
