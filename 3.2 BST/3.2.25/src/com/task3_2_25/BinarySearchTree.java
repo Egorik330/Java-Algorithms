@@ -3,7 +3,6 @@ package com.task3_2_25;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.logging.Logger;
 
 public class BinarySearchTree<K extends Comparable<K>, V> {
     private Node root;
@@ -142,7 +141,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
             return null;
         }
         int compare = key.compareTo(node.key);
-        if(compare == 0){
+        if(compare == 0) {
             return node;
         }
         else if(compare < 0) {
@@ -235,7 +234,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     private int height(Node node) { 
-        if(node == null){
+        if(node == null) {
             return 0;
         }
         return 1 + Math.max(height(node.left), height(node.right));
@@ -260,7 +259,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
     }
 
     private Node deleteMax(Node node) {
-        if(node.right == null){
+        if(node.right == null) {
             return node.left;
         }
         node.right = deleteMin(node.right);
@@ -322,24 +321,4 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
             list.get(mid).size = size(list.get(mid).left) + size(list.get(mid).right) + 1;
         }
     }
-
-    private static Logger LOGGER = Logger.getLogger(BinarySearchTree.class.getName());
-    // не хочется прям менюшку делать для всех , чисто для высоты 2 вывода вот
-    public static void main(String[] args) {
-        BinarySearchTree<String, Integer> tree = new BinarySearchTree<>();
-        List<String> strList = new ArrayList<>();
-        strList.add("O");
-        strList.add("A");
-        strList.add("I");
-        strList.add("P");
-        List<Integer> intList = new ArrayList<>();
-        intList.add(10);
-        intList.add(5);
-        intList.add(2);
-        intList.add(14);
-        tree.getArray(strList, intList);
-        for(int i = 0; i < tree.size(); i++){
-            LOGGER.info(tree.get(tree.select(i)).toString());
-        }
-    }   
 }

@@ -190,12 +190,7 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         }
         Node temp = ceiling(node.left, key);
 
-        if(temp != null) {
-            return temp;
-        }
-        else {
-            return node;
-        }
+        return temp != null ? temp : node;
     }
 
     public K select(int rank) {
@@ -206,7 +201,6 @@ public class BinarySearchTree<K extends Comparable<K>, V> {
         int leftSize = size(node.left);
 
         while(leftSize != rank) {
-
             if(leftSize < rank) {
                 node = node.right;
                 rank = rank - leftSize - 1;
