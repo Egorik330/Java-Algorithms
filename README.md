@@ -8,9 +8,9 @@ Tasks:
 
 [2.5] Применение сортировок: https://github.com/Egorik330/Java-Algorithms/tree/Egorik330-new-stuff/2.5%20Sorting
 
-[3.2] Деревья бинарного поиска: 1. 2 3. 4.
+[3.2] Деревья бинарного поиска: https://github.com/Egorik330/Java-Algorithms/tree/Egorik330-new-stuff/3.2%20BST
 
-[3.3] Сбалансированные деревья поиска: 1. 2. 3. 4.
+[3.3] Сбалансированные деревья поиска: https://github.com/Egorik330/Java-Algorithms/tree/Egorik330-new-stuff/3.3%20Balanced%20BST
 
 [3.4] Хеш-таблицы: 1. 2. 3. 4.
 
