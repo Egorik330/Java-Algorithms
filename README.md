@@ -13,9 +13,9 @@ Tasks:
 
 [3.3] Сбалансированные деревья поиска: https://github.com/Egorik330/Java-Algorithms/tree/Egorik330-new-stuff/3.3%20Balanced%20BST
 
-[3.4] Хеш-таблицы: 1. 2. 3. 4.
+[3.4] Хеш-таблицы: https://github.com/Egorik330/Java-Algorithms/tree/Egorik330-new-stuff/3.4%20HashTables
 
-[5.1] Сортировка строк: 1. 2. 3. 4.
+[5.1] Сортировка строк: https://github.com/Egorik330/Java-Algorithms/tree/Egorik330-new-stuff/5.1%20String%20Sorting
 
 [5.2] Trie-деревья: 1. 2. 3. 4.
 
