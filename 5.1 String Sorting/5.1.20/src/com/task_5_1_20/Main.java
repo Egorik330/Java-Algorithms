@@ -15,15 +15,16 @@ public class Main {
     }
 
     public static String[] randomFixedLengthWords(int N, int W) {
-    String[] words = new String[N];
-    Random random = new Random();
-    for (int i = 0; i < N; i++) {
-        StringBuilder word = new StringBuilder();
-        for (int j = 0; j < W; j++) {
-            char c = (char) ('a' + random.nextInt(26));
-            word.append(c);
-        }
-        words[i] = word.toString();
+        String[] words = new String[N];
+        Random random = new Random();
+        for (int i = 0; i < N; i++) {
+            StringBuilder word = new StringBuilder();
+
+            for (int j = 0; j < W; j++) {
+                char c = (char) ('a' + random.nextInt(26));
+                word.append(c);
+            }
+            words[i] = word.toString();
     }
     return words;
     }
